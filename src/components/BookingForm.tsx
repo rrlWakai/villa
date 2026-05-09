@@ -296,6 +296,10 @@ export default function BookingForm() {
             </div>
           </div>
 
+          {/* FIX: was `text-white-350` (invalid Tailwind class — no color output).
+              Changed to `text-emerald-950` which is the correct dark contrast
+              color against the gold-400 background, matching all other gold
+              buttons in this file (e.g. "Make Another Booking", submit button). */}
           <button
             onClick={() => {
               if (!form.checkIn || !form.checkOut) {

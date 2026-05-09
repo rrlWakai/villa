@@ -71,7 +71,7 @@ export default function BookingSection() {
           <div className="lg:col-span-7 relative">
             <motion.div
               style={{ y: y1 }}
-              className="bg-emerald-950 p-1 shadow-2xl relative z-20"
+              className="bg-emerald-450/95 p-1 shadow-2xl relative z-20"
             >
               <div className="border border-gold-400/20 bg-emerald-950/95 relative overflow-hidden p-6 md:p-12">
                 <div className="absolute inset-0 bg-noise opacity-[0.03] mix-blend-overlay pointer-events-none" />
