@@ -1,0 +1,250 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:wght@300;400;500;600&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: #0D2B1F;
+  --color-primary-light: #253e37;
+  --color-accent: #c8a96b;
+  --color-accent-light: #d7b385;
+  --color-bg: #FEFDFC;
+  --color-text: #0D2B1F;
+  --color-muted: #689282;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: 'DM Sans', system-ui, sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #FEFDFC;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: 3px;
+}
+
+/* Selection */
+::selection {
+  background: rgba(200, 169, 107, 0.3);
+  color: var(--color-primary);
+}
+
+/* Typography */
+.font-display {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+}
+.font-accent {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+/* Luxury gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #c8a96b 0%, #d7b385 50%, #b88a42 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glass effect */
+.glass {
+  background: rgba(254, 253, 252, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(254, 253, 252, 0.4);
+}
+
+.glass-dark {
+  background: rgba(13, 43, 31, 0.6);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(200, 169, 107, 0.15);
+}
+
+/* React DatePicker custom styles */
+.react-datepicker-wrapper {
+  width: 100%;
+}
+
+.react-datepicker {
+  font-family: 'DM Sans', sans-serif !important;
+  border: 1px solid rgba(13, 43, 31, 0.1) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 30px 60px rgba(13, 43, 31, 0.15) !important;
+  overflow: hidden;
+}
+
+.react-datepicker__header {
+  background: #0D2B1F !important;
+  border-bottom: 1px solid #c8a96b !important;
+  padding: 12px !important;
+}
+
+.react-datepicker__current-month,
+.react-datepicker__day-name {
+  color: #c8a96b !important;
+  font-weight: 500;
+}
+
+.react-datepicker__day--selected,
+.react-datepicker__day--in-range,
+.react-datepicker__day--range-start,
+.react-datepicker__day--range-end {
+  background-color: #c8a96b !important;
+  color: #0D2B1F !important;
+  border-radius: 6px !important;
+}
+
+.react-datepicker__day--disabled {
+  color: #dce8e2 !important;
+  text-decoration: line-through;
+  cursor: not-allowed !important;
+}
+
+.react-datepicker__day:hover:not(.react-datepicker__day--disabled) {
+  background-color: rgba(200, 169, 107, 0.2) !important;
+  border-radius: 6px !important;
+  color: #0D2B1F !important;
+}
+
+.react-datepicker__navigation-icon::before {
+  border-color: #c8a96b !important;
+}
+
+/* Shimmer loading */
+.shimmer {
+  background: linear-gradient(90deg, rgba(200,169,107,0.1) 25%, rgba(200,169,107,0.2) 50%, rgba(200,169,107,0.1) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* WhatsApp button pulse */
+@keyframes pulse-gold {
+  0% { box-shadow: 0 0 0 0 rgba(200, 169, 107, 0.6); }
+  70% { box-shadow: 0 0 0 15px rgba(200, 169, 107, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(200, 169, 107, 0); }
+}
+
+.whatsapp-pulse {
+  animation: pulse-gold 2s infinite;
+}
+
+/* Luxury divider */
+.luxury-divider {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.luxury-divider::before,
+.luxury-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #c8a96b, transparent);
+}
+
+/* Image overlay */
+.overlay-gradient {
+  background: linear-gradient(to bottom, rgba(13, 43, 31, 0.1) 0%, rgba(13, 43, 31, 0.8) 100%);
+}
+
+.mask-image-bottom {
+  -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+}
+
+/* Masonry grid */
+.masonry-grid {
+  columns: 2;
+  column-gap: 1rem;
+}
+@media (min-width: 768px) {
+  .masonry-grid {
+    columns: 3;
+    column-gap: 2rem;
+  }
+}
+.masonry-item {
+  break-inside: avoid;
+  margin-bottom: 2rem;
+}
+
+/* Section spacing */
+.section-padding {
+  padding: 8rem 1.5rem;
+}
+@media (min-width: 768px) {
+  .section-padding {
+    padding: 12rem 3rem;
+  }
+}
+
+/* Hover card lift */
+.card-lift {
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.card-lift:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 30px 60px -12px rgba(13, 43, 31, 0.25);
+}
+
+/* Sticky nav shadow */
+.nav-scrolled {
+  background: rgba(254, 253, 252, 0.9);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(13, 43, 31, 0.05);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
+}
+
+/* Input focus ring */
+.input-luxury {
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  background: transparent;
+  border: 1px solid rgba(13, 43, 31, 0.2);
+}
+.input-luxury:focus {
+  border-color: #c8a96b;
+  box-shadow: 0 0 0 1px #c8a96b;
+  outline: none;
+}
+
+/* Custom cinematic utilities */
+.text-balance {
+  text-wrap: balance;
+}
+
+.clip-path-reveal {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  transition: clip-path 1.2s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.clip-path-hidden {
+  clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+}
