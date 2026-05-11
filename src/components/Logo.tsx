@@ -21,8 +21,8 @@ export default function Logo({ className = "", isLight = false }: LogoProps) {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
-          src="/images/villa-jimena-logo.jpg" 
-          alt="Villa Jimena Resort" 
+          src="/images/g.png" 
+          alt="Villa Dacanay Resort" 
           className={`w-full h-full object-cover ${blendClass}`}
         />
       </div>
