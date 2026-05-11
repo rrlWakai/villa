@@ -23,11 +23,8 @@ export default function Hero() {
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-noise opacity-30 mix-blend-overlay z-10"></div>
 
-        {/* Stronger Black Gradient for Readability */}
-      
-
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-sky-950 z-10"></div>
-
+        {/* Readability Gradient */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/75 via-black/45 to-sky-950 z-10"></div>
 
         <motion.div
           animate={{ scale: [1, 1.05] }}
@@ -48,8 +45,8 @@ export default function Hero() {
         </motion.div>
       </div>
 
-      {/* Floating particles */}
-      <div className="absolute inset-0 z-10 overflow-hidden pointer-events-none opacity-50">
+      {/* Floating particles (mobile optimized) */}
+      <div className="hidden sm:block absolute inset-0 z-10 overflow-hidden pointer-events-none opacity-50">
         {[...Array(8)].map((_, i) => (
           <motion.div
             key={i}
@@ -77,7 +74,7 @@ export default function Hero() {
       {/* Content */}
       <div className="relative z-20 h-full flex flex-col justify-end pb-24 md:pb-32 px-6 lg:px-16 max-w-7xl mx-auto w-full">
         <div className="flex flex-col md:flex-row justify-between items-end gap-12">
-          
+
           {/* Left Content */}
           <div className="max-w-3xl">
             <motion.div
@@ -101,7 +98,7 @@ export default function Hero() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1, delay: 0.4 }}
-              className="font-display text-5xl md:text-7xl lg:text-[6rem] text-white font-medium leading-[0.9] tracking-tight text-balance"
+              className="font-display text-3xl sm:text-5xl md:text-7xl lg:text-[6rem] text-white font-medium leading-[1.05] md:leading-[0.9] tracking-tight text-balance"
             >
               <motion.span
                 initial={{ opacity: 0, y: 40 }}
@@ -140,7 +137,7 @@ export default function Hero() {
               delay: 0.8,
               ease: [0.16, 1, 0.3, 1],
             }}
-            className="max-w-sm flex flex-col items-start md:items-end text-left md:text-right"
+            className="max-w-full md:max-w-sm flex flex-col items-start md:items-end text-left md:text-right"
           >
             <p className="text-white/75 text-sm md:text-base leading-relaxed mb-8 font-light">
               Experience a relaxing beachfront retreat in San Fabian, Pangasinan — where tropical scenery, ocean views, and peaceful seaside moments create unforgettable escapes for families and friends.
@@ -151,7 +148,7 @@ export default function Hero() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={scrollToBooking}
-                className="px-8 py-4 bg-amber-400 text-sky-950 font-medium tracking-[0.1em] uppercase text-xs hover:bg-amber-300 transition-colors text-center"
+                className="w-full sm:w-auto px-8 py-4 bg-amber-400 text-sky-950 font-medium tracking-[0.1em] uppercase text-xs hover:bg-amber-300 transition-colors text-center"
               >
                 Book Your Escape
               </motion.button>
@@ -160,7 +157,7 @@ export default function Hero() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={scrollDown}
-                className="px-8 py-4 border border-white/30 text-white font-medium tracking-[0.1em] uppercase text-xs hover:bg-white/10 transition-colors text-center"
+                className="w-full sm:w-auto px-8 py-4 border border-white/30 text-white font-medium tracking-[0.1em] uppercase text-xs hover:bg-white/10 transition-colors text-center"
               >
                 Explore the Resort
               </motion.button>
@@ -179,7 +176,7 @@ export default function Hero() {
           duration: 1,
           ease: [0.16, 1, 0.3, 1],
         }}
-        className="absolute left-6 lg:left-16 text-white/50 hover:text-amber-400 transition-colors flex flex-col items-center gap-4 z-20 group"
+        className="absolute left-3 sm:left-6 lg:left-16 text-white/50 hover:text-amber-400 transition-colors flex flex-col items-center gap-4 z-20 group"
       >
         <span
           className="text-[10px] tracking-[0.3em] uppercase rotate-180"
