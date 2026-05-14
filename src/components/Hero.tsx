@@ -3,15 +3,11 @@ import { ChevronDown, MapPin } from "lucide-react";
 
 export default function Hero() {
   const scrollToBooking = () => {
-    document
-      .querySelector("#booking")
-      ?.scrollIntoView({ behavior: "smooth" });
+    document.querySelector("#booking")?.scrollIntoView({ behavior: "smooth" });
   };
 
   const scrollDown = () => {
-    document
-      .querySelector("#about")
-      ?.scrollIntoView({ behavior: "smooth" });
+    document.querySelector("#about")?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
@@ -24,7 +20,7 @@ export default function Hero() {
         <div className="absolute inset-0 bg-noise opacity-30 mix-blend-overlay z-10"></div>
 
         {/* Readability Gradient */}
-        <div className="absolute inset-0 bg-gradient-to-b from-emerald-950/60 via-emerald-950/50 to-emerald-950 z-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black-950/60 via-black-950/50 to-black-950 z-10"></div>
 
         <motion.div
           animate={{ scale: [1, 1.05] }}
@@ -74,7 +70,6 @@ export default function Hero() {
       {/* Content */}
       <div className="relative z-20 h-full flex flex-col justify-end pb-24 md:pb-32 px-6 lg:px-16 max-w-7xl mx-auto w-full">
         <div className="flex flex-col md:flex-row justify-between items-end gap-12">
-
           {/* Left Content */}
           <div className="max-w-3xl">
             <motion.div
@@ -140,7 +135,9 @@ export default function Hero() {
             className="max-w-full md:max-w-sm flex flex-col items-start md:items-end text-left md:text-right"
           >
             <p className="text-sand-50/75 text-sm md:text-base leading-relaxed mb-8 font-light">
-              Your perfect pause from your busy life. A warm, modern, and lush retreat for couples, families, and weekend escapees from Metro Manila and Central Luzon.
+              Your perfect pause from your busy life. A warm, modern, and lush
+              retreat for couples, families, and weekend escapees from Metro
+              Manila and Central Luzon.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 w-full md:w-auto">
