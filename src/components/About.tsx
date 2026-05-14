@@ -20,8 +20,8 @@ export default function About() {
       ref={containerRef}
     >
       {/* Background Typography */}
-      <div className="absolute top-1/4 -left-20 text-[15rem] md:text-[25rem] font-display text-sky-900/[0.03] whitespace-nowrap pointer-events-none select-none">
-        Beachfront
+      <div className="absolute top-1/4 -left-20 text-[15rem] md:text-[25rem] font-display text-emerald-900/[0.03] whitespace-nowrap pointer-events-none select-none">
+        Tropical
       </div>
 
       <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
@@ -36,40 +36,39 @@ export default function About() {
               transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
             >
               <div className="flex items-center gap-4 mb-8">
-                <span className="text-xs font-semibold tracking-[0.3em] uppercase text-amber-400">
-                  The Destination
+                <span className="text-xs font-semibold tracking-[0.3em] uppercase text-gold-400">
+                  About The Grove
                 </span>
-                <div className="h-[1px] w-16 bg-amber-400"></div>
+                <div className="h-[1px] w-16 bg-gold-400"></div>
               </div>
 
-              <h2 className="font-display text-5xl lg:text-6xl text-sky-950 leading-[1.1] mb-8 text-balance">
-                Where Coastal Beauty 
-                <span className="block italic text-amber-500 font-light mt-1">
-                  Meets Relaxing Escapes
+              <h2 className="font-display text-5xl lg:text-6xl text-emerald-950 leading-[1.1] mb-8 text-balance">
+                Where Lush Calm
+                <span className="block italic text-gold-400 font-light mt-1">
+                  Meets Modern Comfort
                 </span>
               </h2>
 
-              <div className="space-y-6 text-sky-900/70 font-light text-lg leading-relaxed">
+              <div className="space-y-6 text-emerald-900/70 font-light text-lg leading-relaxed">
                 <p>
-                  Villa Dacanay Beach Resort offers a peaceful beachfront escape
-                  in San Fabian, Pangasinan, designed for unforgettable family
-                  vacations, barkada trips, and relaxing seaside getaways.
+                  The Grove by Six Marys is a boutique hotel resort in Bacolor,
+                  Pampanga designed for weekend resets, intimate escapes, and
+                  quality moments with people who matter most.
                 </p>
 
                 <p>
-                  Surrounded by calming ocean views and tropical scenery, the
-                  resort blends comfort, nature, and warm hospitality to create
-                  the perfect destination for rest, celebrations, and memorable
-                  moments by the shore.
+                  From poolside lounging to al fresco evenings under warm lights,
+                  every corner is made to help guests unwind and feel refreshed
+                  in a premium yet approachable tropical setting.
                 </p>
               </div>
 
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="mt-12 px-8 py-4 border border-sky-950 text-sky-950 text-xs tracking-[0.2em] uppercase hover:bg-sky-950 hover:text-sand-50 transition-colors duration-500"
+                className="mt-12 px-8 py-4 border border-emerald-900 text-emerald-950 text-xs tracking-[0.2em] uppercase hover:bg-emerald-950 hover:text-sand-50 transition-colors duration-500"
               >
-                Explore the Resort
+                Reserve now
               </motion.button>
             </motion.div>
           </div>
@@ -83,12 +82,12 @@ export default function About() {
               className="absolute top-0 right-0 w-4/5 md:w-3/4 h-[80%] overflow-hidden"
             >
               <div className="w-full h-full relative">
-                <div className="absolute inset-0 bg-sky-950/10 z-10 mix-blend-overlay"></div>
+                <div className="absolute inset-0 bg-emerald-950/10 z-10 mix-blend-overlay"></div>
 
                 <motion.img
                   style={{ scale }}
                   src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&q=80&auto=format&fit=crop"
-                  alt="Villa Dacanay Beach Resort"
+                  alt="The Grove by Six Marys"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -100,11 +99,11 @@ export default function About() {
               className="absolute bottom-0 left-0 w-1/2 md:w-2/5 h-1/2 z-20 shadow-2xl"
             >
               <div className="w-full h-full relative">
-                <div className="absolute inset-0 border border-white/20 z-10 m-2"></div>
+                <div className="absolute inset-0 border border-sand-100/20 z-10 m-2"></div>
 
                 <img
                   src="https://images.unsplash.com/photo-1519046904884-53103b34b206?w=800&q=80&auto=format&fit=crop"
-                  alt="Beachfront View"
+                  alt="Lush resort view"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -116,17 +115,17 @@ export default function About() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.5, duration: 1 }}
-              className="absolute top-1/4 -left-4 md:-left-12 bg-white px-8 py-6 shadow-2xl z-30"
+              className="absolute top-1/4 -left-4 md:-left-12 bg-sand-50 px-8 py-6 shadow-2xl z-30"
             >
               <div className="text-center">
-                <span className="block font-display text-4xl text-sky-950 italic mb-1">
+                <span className="block font-display text-4xl text-emerald-950 italic mb-1">
                   01
                 </span>
 
-                <div className="w-6 h-[1px] bg-amber-400 mx-auto mb-2"></div>
+                <div className="w-6 h-[1px] bg-gold-400 mx-auto mb-2"></div>
 
-                <span className="block text-[9px] tracking-[0.2em] uppercase text-sky-700">
-                  Beachfront
+                <span className="block text-[9px] tracking-[0.2em] uppercase text-emerald-700">
+                  Boutique Resort
                 </span>
               </div>
             </motion.div>

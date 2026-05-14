@@ -11,19 +11,19 @@ const galleryImages = [
   {
     id: "1",
     url: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80&auto=format&fit=crop",
-    caption: "Golden Beachfront Sunrise",
-    category: "Beach",
+    caption: "Golden Staycation Sunrise",
+    category: "Resort",
   },
   {
     id: "2",
     url: "https://images.unsplash.com/photo-1500375592092-40eb2168fd21?w=800&q=80&auto=format&fit=crop",
     caption: "Calm Ocean Escape",
-    category: "Beach",
+    category: "Resort",
   },
   {
     id: "3",
     url: "/images/room-master.jpg",
-    caption: "Cozy Villa Room Stay",
+    caption: "Cozy Hotel-Style Room",
     category: "Rooms",
   },
   {
@@ -41,8 +41,8 @@ const galleryImages = [
   {
     id: "6",
     url: "https://images.unsplash.com/photo-1519046904884-53103b34b206?w=800&q=80&auto=format&fit=crop",
-    caption: "Barkada Beach Getaway",
-    category: "Beach",
+    caption: "Weekend Resort Getaway",
+    category: "Resort",
   },
   {
     id: "7",
@@ -52,7 +52,7 @@ const galleryImages = [
   }
 ];
 
-const categories = ["All", "Beach", "Pool", "Rooms", "Events"];
+const categories = ["All", "Resort", "Pool", "Rooms", "Events"];
 
 export default function Gallery() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -88,7 +88,7 @@ export default function Gallery() {
   return (
     <section
       id="gallery"
-      className="py-24 md:py-40 bg-sky-950 relative overflow-hidden"
+      className="py-24 md:py-40 bg-emerald-950 relative overflow-hidden"
       ref={containerRef}
     >
       <div className="absolute inset-0 bg-noise opacity-10 mix-blend-overlay pointer-events-none"></div>
@@ -103,12 +103,12 @@ export default function Gallery() {
           transition={{ duration: 0.8 }}
           className="flex flex-col items-center text-center mb-16 md:mb-24"
         >
-          <span className="text-xs font-semibold tracking-[0.3em] uppercase text-amber-400 mb-6">
+          <span className="text-xs font-semibold tracking-[0.3em] uppercase text-gold-400 mb-6">
             The Gallery
           </span>
 
-          <h2 className="font-display text-5xl md:text-7xl text-white mb-10">
-            Moments of <em className="italic text-amber-400 font-light">Paradise</em>
+          <h2 className="font-display text-5xl md:text-7xl text-sand-50 mb-10">
+            Moments of <em className="italic text-gold-400 font-light">Paradise</em>
           </h2>
 
           {/* Filters */}
@@ -119,13 +119,13 @@ export default function Gallery() {
                 onClick={() => setActiveCategory(cat)}
                 className={`text-xs tracking-[0.2em] uppercase transition-all relative group ${
                   activeCategory === cat
-                    ? "text-amber-400"
-                    : "text-white/60 hover:text-amber-300"
+                    ? "text-gold-400"
+                    : "text-sand-50/60 hover:text-gold-300"
                 }`}
               >
                 {cat}
                 <span
-                  className={`absolute -bottom-2 left-0 w-full h-[1px] bg-amber-400 transition-transform origin-left duration-300 ${
+                  className={`absolute -bottom-2 left-0 w-full h-[1px] bg-gold-400 transition-transform origin-left duration-300 ${
                     activeCategory === cat
                       ? "scale-x-100"
                       : "scale-x-0 group-hover:scale-x-100"
@@ -163,8 +163,8 @@ export default function Gallery() {
                     loading="lazy"
                   />
 
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
-                    <p className="text-white text-sm font-light">
+                  <div className="absolute inset-0 bg-gradient-to-t from-emerald-950/60 via-emerald-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                    <p className="text-sand-50 text-sm font-light">
                       {image.caption}
                     </p>
                   </div>
@@ -182,12 +182,12 @@ export default function Gallery() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[100] bg-black/95 backdrop-blur-xl flex items-center justify-center"
+            className="fixed inset-0 z-[100] bg-emerald-950/95 backdrop-blur-xl flex items-center justify-center"
             onClick={closeLightbox}
           >
             {/* Close */}
             <button
-              className="absolute top-6 right-6 text-white/60 hover:text-amber-400"
+              className="absolute top-6 right-6 text-sand-50/60 hover:text-gold-400"
               onClick={closeLightbox}
             >
               <X className="w-8 h-8" />
@@ -195,7 +195,7 @@ export default function Gallery() {
 
             {/* Prev */}
             <button
-              className="absolute left-6 text-white/60 hover:text-amber-400"
+              className="absolute left-6 text-sand-50/60 hover:text-gold-400"
               onClick={(e) => {
                 e.stopPropagation();
                 navigate("prev");
@@ -206,7 +206,7 @@ export default function Gallery() {
 
             {/* Next */}
             <button
-              className="absolute right-6 text-white/60 hover:text-amber-400"
+              className="absolute right-6 text-sand-50/60 hover:text-gold-400"
               onClick={(e) => {
                 e.stopPropagation();
                 navigate("next");
@@ -230,7 +230,7 @@ export default function Gallery() {
                 className="w-full max-h-[80vh] object-contain"
               />
 
-              <p className="text-center text-white/70 mt-6 text-sm">
+              <p className="text-center text-sand-50/70 mt-6 text-sm">
                 {filtered[lightboxIndex].caption}
               </p>
             </motion.div>

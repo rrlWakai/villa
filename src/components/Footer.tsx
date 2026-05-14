@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
-import { MapPin, Instagram, Facebook } from "lucide-react";
+import { MapPin, Facebook, Phone } from "lucide-react";
 import Logo from "./Logo";
 
-const navLinks = ["About", "Rooms", "Amenities", "Gallery", "Reviews"];
-const sectionIds = ["#about", "#rooms", "#amenities", "#gallery", "#reviews"];
+const navLinks = ["About", "Amenities", "Gallery", "Reviews"];
+const sectionIds = ["#about", "#amenities", "#gallery", "#reviews"];
 
 export default function Footer() {
   const scrollTo = (href: string) => {
@@ -13,11 +13,11 @@ export default function Footer() {
   return (
     <footer
       id="contact"
-      className="relative overflow-hidden text-sand-50 bg-blue-950"
+      className="relative overflow-hidden text-sand-50 bg-emerald-950"
     >
       {/* Dark luxury gradient for readability */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-blue-950/90 to-blue-950" />
+        <div className="absolute inset-0 bg-gradient-to-t from-emerald-950/85 via-emerald-950/90 to-emerald-950" />
         <div className="absolute inset-0 bg-noise opacity-[0.04] mix-blend-overlay pointer-events-none" />
       </div>
 
@@ -31,12 +31,12 @@ export default function Footer() {
             </div>
 
             <p className="text-sand-50/70 font-light leading-relaxed max-w-sm mb-10">
-              A private beachfront retreat in San Fabian, Pangasinan — Villa Dacanay Resort offers a serene escape where ocean breeze, tropical landscapes, and peaceful luxury come together for unforgettable stays.
+              The Grove by Six Marys is your perfect pause from your busy life, offering warm hospitality, modern comfort, and lush resort spaces in Bacolor, Pampanga.
             </p>
 
             <div className="flex gap-4">
               <a
-                href="https://www.facebook.com/VillaJimena.PH/"
+                href="https://www.facebook.com/TheGrovebySixMarys"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-12 h-12 rounded-full border border-sand-50/20 flex items-center justify-center hover:bg-gold-500 hover:border-gold-500 hover:text-emerald-950 transition-all duration-500"
@@ -44,13 +44,8 @@ export default function Footer() {
                 <Facebook strokeWidth={1.5} className="w-5 h-5" />
               </a>
 
-              <a
-                href="https://instagram.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-12 h-12 rounded-full border border-sand-50/20 flex items-center justify-center hover:bg-gold-500 hover:border-gold-500 hover:text-emerald-950 transition-all duration-500"
-              >
-                <Instagram strokeWidth={1.5} className="w-5 h-5" />
+              <a href="tel:+639949368919" className="w-12 h-12 rounded-full border border-sand-50/20 flex items-center justify-center hover:bg-gold-500 hover:border-gold-500 hover:text-emerald-950 transition-all duration-500">
+                <Phone strokeWidth={1.5} className="w-5 h-5" />
               </a>
             </div>
           </div>
@@ -84,19 +79,27 @@ export default function Footer() {
             <ul className="space-y-4 text-sand-50/70 font-light">
               <li>
                 <a
-                  href="mailto:concierge@villadacanay.com"
+                  href="https://www.facebook.com/TheGrovebySixMarys"
                   className="hover:text-gold-400 transition-colors duration-300"
                 >
-                  concierge@villadacanay.com
+                  Facebook: The Grove by Six Marys
                 </a>
               </li>
 
               <li>
                 <a
-                  href="tel:+639000000000"
+                  href="tel:+639949368919"
                   className="hover:text-gold-400 transition-colors duration-300"
                 >
-                  +63 900 000 0000
+                  0994 936 8919
+                </a>
+              </li>
+              <li>
+                <a
+                  href="tel:+639159451281"
+                  className="hover:text-gold-400 transition-colors duration-300"
+                >
+                  0915 945 1281
                 </a>
               </li>
 
@@ -106,7 +109,7 @@ export default function Footer() {
                   strokeWidth={1.5}
                 />
                 <span className="leading-relaxed">
-                  San Fabian, Pangasinan <br /> Philippines
+                  Bacolor, Pampanga <br /> Philippines
                 </span>
               </li>
             </ul>
@@ -116,7 +119,7 @@ export default function Footer() {
         {/* Bottom */}
         <div className="pt-8 border-t border-sand-50/10 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sand-50/40 text-xs tracking-wider uppercase">
-            &copy; {new Date().getFullYear()} Villa Dacanay Resort. All rights reserved.
+            &copy; {new Date().getFullYear()} The Grove by Six Marys. All rights reserved.
           </p>
 
           <div className="flex gap-6 text-sand-50/40 text-xs tracking-wider uppercase">

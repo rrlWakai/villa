@@ -5,7 +5,6 @@ import Logo from "./Logo";
 
 const navLinks = [
   { label: "About", href: "#about" },
-  { label: "Villas", href: "#rooms" },
   { label: "Amenities", href: "#amenities" },
   { label: "Gallery", href: "#gallery" },
   { label: "Contact", href: "#contact" },
@@ -19,13 +18,12 @@ export default function Navbar() {
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
-      
-      // Update active section based on scroll position
-      const sections = navLinks.map(link => link.href.substring(1));
+
+      const sections = navLinks.map((link) => link.href.substring(1));
       let current = "";
       for (const section of sections) {
         const element = document.getElementById(section);
-        if (element && window.scrollY >= (element.offsetTop - 150)) {
+        if (element && window.scrollY >= element.offsetTop - 150) {
           current = `#${section}`;
         }
       }
@@ -53,59 +51,76 @@ export default function Navbar() {
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ${
           isScrolled
             ? "nav-scrolled py-2"
-            : "bg-gradient-to-b from-black/50 to-transparent py-4"
+            : "bg-gradient-to-b from-emerald-950/55 to-transparent py-3"
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between gap-3">
             {/* Desktop Left Links */}
-            <div className="hidden lg:flex items-center gap-8 w-1/3">
-              {navLinks.slice(0, 2).map((link) => (
+            <div className="hidden lg:flex items-center gap-7 w-1/3">
+              {navLinks.slice(0, 1).map((link) => (
                 <button
                   key={link.href}
                   onClick={() => scrollTo(link.href)}
                   className={`text-sm tracking-widest uppercase transition-colors duration-300 relative group ${
                     isScrolled
                       ? "text-emerald-900 hover:text-gold-500"
-                      : "text-white/90 hover:text-gold-300"
+                      : "text-sand-50/90 hover:text-gold-300"
                   }`}
                 >
                   {link.label}
-                  <span className={`absolute -bottom-1.5 left-0 w-full h-[1px] transform scale-x-0 transition-transform duration-300 origin-left ${isScrolled ? 'bg-gold-500' : 'bg-gold-300'} group-hover:scale-x-100 ${activeSection === link.href ? 'scale-x-100' : ''}`} />
+                  <span
+                    className={`absolute -bottom-1.5 left-0 w-full h-[1px] transform scale-x-0 transition-transform duration-300 origin-left ${isScrolled ? "bg-gold-500" : "bg-gold-300"} group-hover:scale-x-100 ${activeSection === link.href ? "scale-x-100" : ""}`}
+                  />
                 </button>
               ))}
             </div>
 
-            {/* Logo Center */}
+            {/* Brand Center */}
             <motion.a
               href="#"
               onClick={(e) => {
                 e.preventDefault();
                 window.scrollTo({ top: 0, behavior: "smooth" });
               }}
-              className="flex justify-center w-1/3"
+              className="flex items-center justify-center lg:justify-center gap-2.5 w-auto lg:w-1/3"
               whileHover={{ scale: 1.02 }}
               transition={{ duration: 0.3 }}
             >
-              <div className={`transition-all duration-500 ${isScrolled ? 'scale-75 origin-top' : 'scale-100'}`}>
-                <Logo isLight={!isScrolled} />
+              {/* Logo wrapper — scale-75 shrinks it ~25% vs the original scale-95/scale-100 */}
+              <div
+                className={`transition-all duration-500 ${isScrolled ? "scale-[0.70] origin-top" : "scale-75"}`}
+              >
+                <Logo isLight={!isScrolled} className="shrink-0" />
+              </div>
+              <div
+                className={`hidden sm:block leading-tight transition-colors ${isScrolled ? "text-emerald-900" : "text-sand-50"}`}
+              >
+                <p className="text-[15px] tracking-[0.18em] uppercase">
+                  The Grove
+                </p>
+                <p className="text-[9px] tracking-[0.14em] uppercase opacity-80">
+                  By Six Marys
+                </p>
               </div>
             </motion.a>
 
             {/* Desktop Right Links & CTA */}
             <div className="hidden lg:flex items-center justify-end gap-8 w-1/3">
-              {navLinks.slice(2).map((link) => (
+              {navLinks.slice(1).map((link) => (
                 <button
                   key={link.href}
                   onClick={() => scrollTo(link.href)}
                   className={`text-sm tracking-widest uppercase transition-colors duration-300 relative group ${
                     isScrolled
                       ? "text-emerald-900 hover:text-gold-500"
-                      : "text-white/90 hover:text-gold-300"
+                      : "text-sand-50/90 hover:text-gold-300"
                   }`}
                 >
                   {link.label}
-                  <span className={`absolute -bottom-1.5 left-0 w-full h-[1px] transform scale-x-0 transition-transform duration-300 origin-left ${isScrolled ? 'bg-gold-500' : 'bg-gold-300'} group-hover:scale-x-100 ${activeSection === link.href ? 'scale-x-100' : ''}`} />
+                  <span
+                    className={`absolute -bottom-1.5 left-0 w-full h-[1px] transform scale-x-0 transition-transform duration-300 origin-left ${isScrolled ? "bg-gold-500" : "bg-gold-300"} group-hover:scale-x-100 ${activeSection === link.href ? "scale-x-100" : ""}`}
+                  />
                 </button>
               ))}
               <motion.button
@@ -115,18 +130,18 @@ export default function Navbar() {
                 className={`px-6 py-2.5 text-sm tracking-widest uppercase transition-all duration-300 border ${
                   isScrolled
                     ? "border-emerald-900 text-emerald-900 hover:bg-emerald-900 hover:text-gold-300"
-                    : "border-white/50 text-white hover:bg-white hover:text-emerald-900"
+                    : "border-sand-100/50 text-sand-50 hover:bg-sand-50 hover:text-emerald-900"
                 }`}
               >
-                Reserve
+                Reserve now
               </motion.button>
             </div>
 
             {/* Mobile menu button */}
-            <div className="lg:hidden flex items-center justify-end w-1/3">
+            <div className="lg:hidden flex items-center justify-end">
               <button
                 onClick={() => setIsOpen(!isOpen)}
-                className={`p-2 transition-colors ${isScrolled ? "text-emerald-900" : "text-white"}`}
+                className={`p-2 transition-colors ${isScrolled ? "text-emerald-900" : "text-sand-50"}`}
               >
                 {isOpen ? (
                   <X className="w-8 h-8 font-light" strokeWidth={1} />
@@ -149,22 +164,32 @@ export default function Navbar() {
             transition={{ duration: 0.5 }}
             className="fixed inset-0 z-40 bg-emerald-900/95 backdrop-blur-xl lg:hidden flex flex-col justify-center items-center"
           >
-            <div className="flex flex-col items-center justify-center space-y-8 w-full max-w-sm px-6">
-              <Logo isLight={true} className="mb-8 scale-110" />
-              
+            <div className="flex flex-col items-center justify-center space-y-7 w-full max-w-sm px-6">
+              {/* Mobile overlay logo also slightly smaller */}
+              <div className="scale-75 mb-4">
+                <Logo isLight={true} />
+              </div>
+              <p className="text-sand-50/80 text-[10px] tracking-[0.2em] uppercase -mt-3 mb-3">
+                The Grove by Six Marys
+              </p>
+
               {navLinks.map((link, i) => (
                 <motion.button
                   key={link.href}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: i * 0.1 + 0.2, duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                  transition={{
+                    delay: i * 0.1 + 0.2,
+                    duration: 0.5,
+                    ease: [0.16, 1, 0.3, 1],
+                  }}
                   onClick={() => scrollTo(link.href)}
-                  className="text-2xl font-display italic text-white/90 hover:text-gold-300 transition-colors"
+                  className="text-2xl font-display italic text-sand-50/90 hover:text-gold-300 transition-colors"
                 >
                   {link.label}
                 </motion.button>
               ))}
-              
+
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -175,7 +200,7 @@ export default function Navbar() {
                   onClick={() => scrollTo("#booking")}
                   className="w-full py-4 border border-gold-400/50 text-gold-300 text-sm tracking-[0.2em] uppercase hover:bg-gold-400 hover:text-emerald-900 transition-all duration-500"
                 >
-                  Reserve Your Stay
+                  Book your stay
                 </button>
               </motion.div>
             </div>

@@ -69,7 +69,7 @@ export default function InquiryForm() {
           value={form.name}
           onChange={e => setForm(f => ({ ...f, name: e.target.value }))}
           placeholder="Maria Santos"
-          className="w-full px-4 py-3 border border-white/20 rounded-xl text-sm input-luxury bg-white/5 text-sand-50 placeholder:text-sand-50/40 focus:outline-none focus:border-gold-400 focus:ring-1 focus:ring-gold-400 transition-all"
+          className="w-full px-4 py-3 border border-sand-100/20 rounded-xl text-sm input-luxury bg-sand-50/5 text-sand-50 placeholder:text-sand-50/40 focus:outline-none focus:border-gold-400 focus:ring-1 focus:ring-gold-400 transition-all"
         />
       </div>
 
@@ -85,7 +85,7 @@ export default function InquiryForm() {
             value={form.email}
             onChange={e => setForm(f => ({ ...f, email: e.target.value }))}
             placeholder="your@email.com"
-            className="w-full px-4 py-3 border border-white/20 rounded-xl text-sm input-luxury bg-white/5 text-sand-50 placeholder:text-sand-50/40 focus:outline-none focus:border-gold-400 focus:ring-1 focus:ring-gold-400 transition-all"
+            className="w-full px-4 py-3 border border-sand-100/20 rounded-xl text-sm input-luxury bg-sand-50/5 text-sand-50 placeholder:text-sand-50/40 focus:outline-none focus:border-gold-400 focus:ring-1 focus:ring-gold-400 transition-all"
           />
         </div>
         <div>
@@ -98,7 +98,7 @@ export default function InquiryForm() {
             value={form.phone}
             onChange={e => setForm(f => ({ ...f, phone: e.target.value }))}
             placeholder="+63 9XX XXX XXXX"
-            className="w-full px-4 py-3 border border-white/20 rounded-xl text-sm input-luxury bg-white/5 text-sand-50 placeholder:text-sand-50/40 focus:outline-none focus:border-gold-400 focus:ring-1 focus:ring-gold-400 transition-all"
+            className="w-full px-4 py-3 border border-sand-100/20 rounded-xl text-sm input-luxury bg-sand-50/5 text-sand-50 placeholder:text-sand-50/40 focus:outline-none focus:border-gold-400 focus:ring-1 focus:ring-gold-400 transition-all"
           />
         </div>
       </div>
@@ -114,7 +114,7 @@ export default function InquiryForm() {
           value={form.message}
           onChange={e => setForm(f => ({ ...f, message: e.target.value }))}
           placeholder="Tell us about your event, group size, preferred dates, or any questions..."
-          className="w-full px-4 py-3 border border-white/20 rounded-xl text-sm input-luxury bg-white/5 text-sand-50 placeholder:text-sand-50/40 focus:outline-none focus:border-gold-400 focus:ring-1 focus:ring-gold-400 transition-all resize-none"
+          className="w-full px-4 py-3 border border-sand-100/20 rounded-xl text-sm input-luxury bg-sand-50/5 text-sand-50 placeholder:text-sand-50/40 focus:outline-none focus:border-gold-400 focus:ring-1 focus:ring-gold-400 transition-all resize-none"
         />
       </div>
 

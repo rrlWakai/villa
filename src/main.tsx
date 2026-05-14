@@ -16,26 +16,26 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
           toastOptions={{
             duration: 4000,
             style: {
-              fontFamily: "DM Sans, sans-serif",
+              fontFamily: "Inter, sans-serif",
               borderRadius: "12px",
               padding: "12px 16px",
             },
             success: {
               style: {
-                background: "#ecfdf5",
-                color: "#065f46",
-                border: "1px solid #a7f3d0",
+                background: "#F5F0E8",
+                color: "#1A3317",
+                border: "1px solid #E8E4DC",
               },
               iconTheme: {
-                primary: "#047857",
-                secondary: "#ecfdf5",
+                primary: "#2D5A27",
+                secondary: "#F5F0E8",
               },
             },
             error: {
               style: {
-                background: "#fef2f2",
-                color: "#991b1b",
-                border: "1px solid #fecaca",
+                background: "#F5F0E8",
+                color: "#3A3A3A",
+                border: "1px solid #E8E4DC",
               },
             },
           }}

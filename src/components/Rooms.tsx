@@ -8,7 +8,7 @@ const rooms = [
     name: "Family Room",
     tagline: "Perfect for Bonding",
     description:
-      "A spacious beachfront room designed for families and groups. Enjoy cozy beds, simple comforts, and easy access to the beach — perfect for shared moments and unforgettable stays by the shore.",
+      "A spacious staycation room designed for families and groups. Enjoy cozy beds, simple comforts, and easy access to the resort — perfect for shared moments and unforgettable stays by the shore.",
     capacity: 6,
     beds: "2 Queen Beds",
     baths: "1 Shared Bathroom",
@@ -18,9 +18,9 @@ const rooms = [
   {
     id: "standard",
     name: "Standard Room",
-    tagline: "Simple Coastal Comfort",
+    tagline: "Simple Tropical Comfort",
     description:
-      "A clean and comfortable room ideal for couples or small groups. Relax in a peaceful space designed for rest after a full day of beach adventures.",
+      "A clean and comfortable room ideal for couples or small groups. Relax in a peaceful space designed for rest after a full day of resort adventures.",
     capacity: 2,
     beds: "1 Queen Bed",
     baths: "1 Shared Bathroom",
@@ -29,11 +29,11 @@ const rooms = [
       "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=1200&q=80&auto=format&fit=crop",
   },
   {
-    id: "barkada",
-    name: "Barkada Room",
+    id: "weekend",
+    name: "Weekend Room",
     tagline: "For Group Getaways",
     description:
-      "Designed for barkada trips and big groups, this room offers multiple beds, wide space, and a laid-back beach vibe perfect for fun and bonding moments.",
+      "Designed for weekend trips and big groups, this room offers multiple beds, wide space, and a laid-back resort vibe perfect for fun and bonding moments.",
     capacity: 8,
     beds: "Multiple Beds (Bunk Setup)",
     baths: "1 Shared Bathroom",
@@ -78,51 +78,51 @@ const RoomSection = ({
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8 }}
           >
-            <span className="text-amber-500 font-display italic text-2xl mb-2 block">
+            <span className="text-gold-400 font-display italic text-2xl mb-2 block">
               0{index + 1}
             </span>
 
             <div className="flex items-center gap-4 mb-6">
-              <span className="text-xs font-semibold tracking-[0.3em] uppercase text-sky-900">
+              <span className="text-xs font-semibold tracking-[0.3em] uppercase text-emerald-900">
                 {room.tagline}
               </span>
-              <div className="h-[1px] w-12 bg-sky-900/30"></div>
+              <div className="h-[1px] w-12 bg-emerald-900/30"></div>
             </div>
 
-            <h3 className="font-display text-4xl lg:text-5xl text-sky-950 leading-tight mb-6">
+            <h3 className="font-display text-4xl lg:text-5xl text-emerald-950 leading-tight mb-6">
               {room.name}
             </h3>
 
-            <p className="text-sky-900/70 font-light text-lg leading-relaxed mb-10">
+            <p className="text-emerald-900/70 font-light text-lg leading-relaxed mb-10">
               {room.description}
             </p>
 
             {/* SPECS */}
             <div className="flex flex-col gap-4 mb-10">
-              <div className="flex justify-between border-b border-sky-900/10 pb-4">
-                <div className="flex items-center gap-3 text-sky-900/80">
-                  <BedDouble className="w-4 h-4 text-amber-500" />
+              <div className="flex justify-between border-b border-emerald-900/10 pb-4">
+                <div className="flex items-center gap-3 text-emerald-900/80">
+                  <BedDouble className="w-4 h-4 text-gold-400" />
                   <span className="text-sm">{room.beds}</span>
                 </div>
               </div>
 
-              <div className="flex justify-between border-b border-sky-900/10 pb-4">
-                <div className="flex items-center gap-3 text-sky-900/80">
-                  <Bath className="w-4 h-4 text-amber-500" />
+              <div className="flex justify-between border-b border-emerald-900/10 pb-4">
+                <div className="flex items-center gap-3 text-emerald-900/80">
+                  <Bath className="w-4 h-4 text-gold-400" />
                   <span className="text-sm">{room.baths}</span>
                 </div>
               </div>
 
-              <div className="flex justify-between border-b border-sky-900/10 pb-4">
-                <div className="flex items-center gap-3 text-sky-900/80">
-                  <Maximize className="w-4 h-4 text-amber-500" />
+              <div className="flex justify-between border-b border-emerald-900/10 pb-4">
+                <div className="flex items-center gap-3 text-emerald-900/80">
+                  <Maximize className="w-4 h-4 text-gold-400" />
                   <span className="text-sm">{room.size}</span>
                 </div>
               </div>
 
-              <div className="flex justify-between border-b border-sky-900/10 pb-4">
-                <div className="flex items-center gap-3 text-sky-900/80">
-                  <Users className="w-4 h-4 text-amber-500" />
+              <div className="flex justify-between border-b border-emerald-900/10 pb-4">
+                <div className="flex items-center gap-3 text-emerald-900/80">
+                  <Users className="w-4 h-4 text-gold-400" />
                   <span className="text-sm">
                     Up to {room.capacity} guests
                   </span>
@@ -133,7 +133,7 @@ const RoomSection = ({
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-8 py-3 text-xs tracking-[0.2em] uppercase font-medium text-sky-950 border border-sky-950 hover:bg-sky-950 hover:text-white transition-colors duration-500"
+              className="px-8 py-3 text-xs tracking-[0.2em] uppercase font-medium text-emerald-950 border border-emerald-900 hover:bg-emerald-950 hover:text-sand-50 transition-colors duration-500"
             >
               View Details
             </motion.button>
@@ -142,27 +142,15 @@ const RoomSection = ({
 
         {/* IMAGE */}
         <div className="w-full md:w-7/12 h-[60vh] md:h-[80vh] relative">
-          <motion.div
-            initial={{
-              opacity: 0,
-              clipPath: "polygon(0 0, 0 0, 0 100%, 0 100%)",
-            }}
-            whileInView={{
-              opacity: 1,
-              clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
-            }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 1.2 }}
-            className="w-full h-full overflow-hidden relative shadow-2xl"
-          >
+          <div className="w-full h-full overflow-hidden relative shadow-2xl">
             <motion.img
               style={{ y: yImage, scale: 1.1 }}
               src={room.image}
               alt={room.name}
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-black/10 mix-blend-overlay"></div>
-          </motion.div>
+            <div className="absolute inset-0 bg-emerald-950/10 mix-blend-overlay"></div>
+          </div>
         </div>
       </div>
     </div>
@@ -180,12 +168,12 @@ export default function Rooms() {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <span className="text-xs font-semibold tracking-[0.3em] uppercase text-amber-500 mb-4 block">
+          <span className="text-xs font-semibold tracking-[0.3em] uppercase text-gold-400 mb-4 block">
             The Accommodations
           </span>
 
-          <h2 className="font-display text-5xl lg:text-6xl text-sky-950 mb-6">
-            Stay in <em className="italic text-amber-500 font-light">Coastal Comfort</em>
+          <h2 className="font-display text-5xl lg:text-6xl text-emerald-950 mb-6">
+            Stay in <em className="italic text-gold-400 font-light">Tropical Comfort</em>
           </h2>
         </motion.div>
       </div>
@@ -204,17 +192,17 @@ export default function Rooms() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="bg-sky-950 px-8 py-16 text-center shadow-2xl relative overflow-hidden"
+          className="bg-emerald-950 px-8 py-16 text-center shadow-2xl relative overflow-hidden"
         >
           <div className="absolute inset-0 bg-noise opacity-20 mix-blend-overlay"></div>
 
           <div className="relative z-10">
-            <h3 className="font-display text-4xl text-white mb-4">
-              Perfect for <span className="text-amber-400 italic">Family & Barkada Getaways</span>
+            <h3 className="font-display text-4xl text-sand-50 mb-4">
+              Perfect for <span className="text-gold-400 italic">Couples, Families & Friends Getaways</span>
             </h3>
 
-            <p className="text-white/70 font-light tracking-wide">
-              A beachfront experience made for bonding, relaxation, and unforgettable memories.
+            <p className="text-sand-50/70 font-light tracking-wide">
+              A staycation experience made for bonding, relaxation, and unforgettable memories.
             </p>
           </div>
         </motion.div>

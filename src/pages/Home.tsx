@@ -4,7 +4,6 @@ import Hero from '../components/Hero';
 import About from '../components/About';
 import Amenities from '../components/Amenities';
 import Gallery from '../components/Gallery';
-import Rooms from '../components/Rooms';
 import Reviews from '../components/Reviews';
 import CTASection from '../components/CTASection';
 import BookingSection from '../components/BookingSection';
@@ -14,22 +13,21 @@ export default function Home() {
   return (
     <>
       <Helmet>
-        <title>Villa Dacanay | Private Luxury Villa in San Fabian</title>
-        <meta name="description" content="Discover Villa Dacanay, an exclusive private luxury sanctuary in San Fabian, Pangasinan. Experience timeless elegance, infinity pools, and immersive tropical landscapes." />
-        <meta name="keywords" content="Villa Dacanay, luxury resort Pangasinan, private villa rental Philippines, boutique resort San Fabian, Tagaytay staycation, high-end exclusive villa" />
-        <meta property="og:title" content="Villa Dacanay Resort | Private Luxury Sanctuary" />
-        <meta property="og:description" content="A fully private tropical luxury retreat near Tagaytay. Experience unparalleled privacy and elegance in Alfonso, Cavite." />
-        <meta property="og:image" content="https://images.unsplash.com/photo-1540541338287-41700207dee6?w=1200" />
+        <title>The Grove by Six Marys | Boutique Hotel Resort in Bacolor, Pampanga</title>
+        <meta name="description" content="Experience modern comfort at The Grove by Six Marys in Bacolor, Pampanga. Your perfect pause from your busy life with poolside leisure, dining, garden spaces, and hotel-style rooms." />
+        <meta name="keywords" content="The Grove by Six Marys, boutique hotel resort Bacolor Pampanga, staycation Pampanga, pool resort Philippines, weekend escape Central Luzon" />
+        <meta property="og:title" content="The Grove by Six Marys | Experience Modern Comfort" />
+        <meta property="og:description" content="Your perfect pause from your busy life. Discover a warm and modern boutique resort experience in Bacolor, Pampanga." />
+        <meta property="og:image" content="/images/the-grove-hero.png" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
-        <link rel="canonical" href="https://villadacanay.com" />
+        <link rel="canonical" href="https://thegrovebysixmarys.com" />
       </Helmet>
 
       <Navbar />
       <main>
         <Hero />
         <About />
-        <Rooms />
         <Amenities />
         <Gallery />
         <Reviews />

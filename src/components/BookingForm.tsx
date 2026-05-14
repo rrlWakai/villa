@@ -99,41 +99,41 @@ export default function BookingForm() {
         <div className="w-20 h-20 bg-gold-400/20 rounded-full flex items-center justify-center mx-auto mb-6">
           <Check className="w-10 h-10 text-gold-400" />
         </div>
-        <h3 className="font-display text-3xl font-semibold text-white mb-3">
+        <h3 className="font-display text-3xl font-semibold text-sand-50 mb-3">
           Request Received!
         </h3>
-        <p className="text-white/80 mb-2">
-          Thank you, <strong className="text-white">{form.name}</strong>! Your booking request has been
+        <p className="text-sand-50/80 mb-2">
+          Thank you, <strong className="text-sand-50">{form.name}</strong>! Your booking request has been
           submitted.
         </p>
-        <p className="text-white/60 text-sm mb-8">
+        <p className="text-sand-50/60 text-sm mb-8">
           We'll confirm your reservation via email or phone within 24 hours.
         </p>
         {form.checkIn && form.checkOut && (
-          <div className="inline-flex gap-6 bg-white/5 rounded-2xl px-8 py-4 border border-white/20 mb-8">
+          <div className="inline-flex gap-6 bg-sand-50/5 rounded-2xl px-8 py-4 border border-sand-100/20 mb-8">
             <div className="text-center">
-              <div className="text-xs text-white/50 uppercase tracking-wide mb-1">
+              <div className="text-xs text-sand-50/50 uppercase tracking-wide mb-1">
                 Check-in
               </div>
-              <div className="font-semibold text-white">
+              <div className="font-semibold text-sand-50">
                 {format(form.checkIn, "MMM d, yyyy")}
               </div>
             </div>
-            <div className="w-px bg-white/20" />
+            <div className="w-px bg-sand-50/20" />
             <div className="text-center">
-              <div className="text-xs text-white/50 uppercase tracking-wide mb-1">
+              <div className="text-xs text-sand-50/50 uppercase tracking-wide mb-1">
                 Check-out
               </div>
-              <div className="font-semibold text-white">
+              <div className="font-semibold text-sand-50">
                 {format(form.checkOut, "MMM d, yyyy")}
               </div>
             </div>
-            <div className="w-px bg-white/20" />
+            <div className="w-px bg-sand-50/20" />
             <div className="text-center">
-              <div className="text-xs text-white/50 uppercase tracking-wide mb-1">
+              <div className="text-xs text-sand-50/50 uppercase tracking-wide mb-1">
                 Guests
               </div>
-              <div className="font-semibold text-white">{form.guests}</div>
+              <div className="font-semibold text-sand-50">{form.guests}</div>
             </div>
           </div>
         )}
@@ -172,19 +172,19 @@ export default function BookingForm() {
                   ? "bg-gold-400 text-emerald-950"
                   : step > s
                     ? "bg-gold-400/20 text-gold-400 cursor-pointer border border-gold-400/30"
-                    : "bg-transparent text-white/40 border border-white/30"
+                    : "bg-transparent text-sand-50/40 border border-sand-100/30"
               }`}
             >
               {step > s ? <Check className="w-4 h-4" /> : s}
             </button>
             <span
-              className={`text-sm font-medium ${step >= s ? "text-white" : "text-white/40"}`}
+              className={`text-sm font-medium ${step >= s ? "text-sand-50" : "text-sand-50/40"}`}
             >
               {s === 1 ? "Select Dates" : "Your Details"}
             </span>
             {s < 2 && (
               <div
-                className={`w-8 h-px mx-2 ${step > s ? "bg-gold-400/50" : "bg-white/20"}`}
+                className={`w-8 h-px mx-2 ${step > s ? "bg-gold-400/50" : "bg-sand-50/20"}`}
               />
             )}
           </div>
@@ -201,7 +201,7 @@ export default function BookingForm() {
           <div className="grid md:grid-cols-2 gap-4">
             {/* Check-in */}
             <div>
-              <label className="flex items-center gap-2 text-sm font-medium text-white mb-2">
+              <label className="flex items-center gap-2 text-sm font-medium text-sand-50 mb-2">
                 <Calendar className="w-4 h-4 text-gold-400" />
                 Check-in Date
               </label>
@@ -220,14 +220,14 @@ export default function BookingForm() {
                 minDate={new Date()}
                 filterDate={(date) => !isDateBooked(date)}
                 placeholderText="Select check-in"
-                className="w-full px-4 py-3 border border-white/20 rounded-xl text-sm input-luxury bg-white/5 text-white placeholder:text-white/50 focus:outline-none focus:border-gold-400 focus:ring-1 focus:ring-gold-400 transition-all"
+                className="w-full px-4 py-3 border border-sand-100/20 rounded-xl text-sm input-luxury bg-sand-50/5 text-sand-50 placeholder:text-sand-50/50 focus:outline-none focus:border-gold-400 focus:ring-1 focus:ring-gold-400 transition-all"
                 dateFormat="MMMM d, yyyy"
               />
             </div>
 
             {/* Check-out */}
             <div>
-              <label className="flex items-center gap-2 text-sm font-medium text-white mb-2">
+              <label className="flex items-center gap-2 text-sm font-medium text-sand-50 mb-2">
                 <Calendar className="w-4 h-4 text-gold-400" />
                 Check-out Date
               </label>
@@ -241,7 +241,7 @@ export default function BookingForm() {
                 }
                 filterDate={(date) => !isDateBooked(date)}
                 placeholderText="Select check-out"
-                className="w-full px-4 py-3 border border-white/20 rounded-xl text-sm input-luxury bg-white/5 text-white placeholder:text-white/50 focus:outline-none focus:border-gold-400 focus:ring-1 focus:ring-gold-400 transition-all disabled:opacity-50"
+                className="w-full px-4 py-3 border border-sand-100/20 rounded-xl text-sm input-luxury bg-sand-50/5 text-sand-50 placeholder:text-sand-50/50 focus:outline-none focus:border-gold-400 focus:ring-1 focus:ring-gold-400 transition-all disabled:opacity-50"
                 dateFormat="MMMM d, yyyy"
                 disabled={!form.checkIn}
               />
@@ -253,13 +253,13 @@ export default function BookingForm() {
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              className="flex items-center justify-between p-4 bg-white/5 border border-white/20 rounded-xl"
+              className="flex items-center justify-between p-4 bg-sand-50/5 border border-sand-100/20 rounded-xl"
             >
-              <span className="text-white font-medium text-sm flex items-center gap-1">
+              <span className="text-sand-50 font-medium text-sm flex items-center gap-1">
                 <Moon className="w-4 h-4 text-gold-400" /> {nights} night
                 {nights > 1 ? "s" : ""}
               </span>
-              <span className="text-white/70 text-sm">
+              <span className="text-sand-50/70 text-sm">
                 {form.checkIn && format(form.checkIn, "MMM d")} →{" "}
                 {form.checkOut && format(form.checkOut, "MMM d, yyyy")}
               </span>
@@ -268,7 +268,7 @@ export default function BookingForm() {
 
           {/* Guests */}
           <div>
-            <label className="flex items-center gap-2 text-sm font-medium text-white mb-2">
+            <label className="flex items-center gap-2 text-sm font-medium text-sand-50 mb-2">
               <Users className="w-4 h-4 text-gold-400" />
               Number of Guests
             </label>
@@ -277,26 +277,26 @@ export default function BookingForm() {
                 onClick={() =>
                   setForm((f) => ({ ...f, guests: Math.max(1, f.guests - 1) }))
                 }
-                className="w-10 h-10 rounded-xl border border-white/20 flex items-center justify-center text-white/70 hover:border-gold-400 hover:text-gold-400 transition-colors font-semibold text-lg bg-white/5"
+                className="w-10 h-10 rounded-xl border border-sand-100/20 flex items-center justify-center text-sand-50/70 hover:border-gold-400 hover:text-gold-400 transition-colors font-semibold text-lg bg-sand-50/5"
               >
                 −
               </button>
-              <span className="font-display text-2xl font-medium text-white w-8 text-center">
+              <span className="font-display text-2xl font-medium text-sand-50 w-8 text-center">
                 {form.guests}
               </span>
               <button
                 onClick={() =>
                   setForm((f) => ({ ...f, guests: Math.min(20, f.guests + 1) }))
                 }
-                className="w-10 h-10 rounded-xl border border-white/20 flex items-center justify-center text-white/70 hover:border-gold-400 hover:text-gold-400 transition-colors font-semibold text-lg bg-white/5"
+                className="w-10 h-10 rounded-xl border border-sand-100/20 flex items-center justify-center text-sand-50/70 hover:border-gold-400 hover:text-gold-400 transition-colors font-semibold text-lg bg-sand-50/5"
               >
                 +
               </button>
-              <span className="text-white/60 text-sm">(Max 20 guests)</span>
+              <span className="text-sand-50/60 text-sm">(Max 20 guests)</span>
             </div>
           </div>
 
-          {/* FIX: was `text-white-350` (invalid Tailwind class — no color output).
+          {/* FIX: was `text-sand-50` (invalid Tailwind class — no color output).
               Changed to `text-emerald-950` which is the correct dark contrast
               color against the gold-400 background, matching all other gold
               buttons in this file (e.g. "Make Another Booking", submit button). */}
@@ -323,7 +323,7 @@ export default function BookingForm() {
           className="space-y-4"
         >
           <div>
-            <label className="flex items-center gap-2 text-sm font-medium text-white mb-2">
+            <label className="flex items-center gap-2 text-sm font-medium text-sand-50 mb-2">
               <User className="w-4 h-4 text-gold-400" />
               Full Name *
             </label>
@@ -332,13 +332,13 @@ export default function BookingForm() {
               value={form.name}
               onChange={(e) => setForm((f) => ({ ...f, name: e.target.value }))}
               placeholder="e.g. Maria Santos"
-              className="w-full px-4 py-3 border border-white/20 rounded-xl text-sm input-luxury bg-white/5 text-white placeholder:text-white/50 focus:outline-none focus:border-gold-400 focus:ring-1 focus:ring-gold-400 transition-all"
+              className="w-full px-4 py-3 border border-sand-100/20 rounded-xl text-sm input-luxury bg-sand-50/5 text-sand-50 placeholder:text-sand-50/50 focus:outline-none focus:border-gold-400 focus:ring-1 focus:ring-gold-400 transition-all"
             />
           </div>
 
           <div className="grid grid-cols-2 gap-4">
             <div>
-              <label className="flex items-center gap-2 text-sm font-medium text-white mb-2">
+              <label className="flex items-center gap-2 text-sm font-medium text-sand-50 mb-2">
                 <Mail className="w-4 h-4 text-gold-400" />
                 Email *
               </label>
@@ -349,11 +349,11 @@ export default function BookingForm() {
                   setForm((f) => ({ ...f, email: e.target.value }))
                 }
                 placeholder="your@email.com"
-                className="w-full px-4 py-3 border border-white/20 rounded-xl text-sm input-luxury bg-white/5 text-white placeholder:text-white/50 focus:outline-none focus:border-gold-400 focus:ring-1 focus:ring-gold-400 transition-all"
+                className="w-full px-4 py-3 border border-sand-100/20 rounded-xl text-sm input-luxury bg-sand-50/5 text-sand-50 placeholder:text-sand-50/50 focus:outline-none focus:border-gold-400 focus:ring-1 focus:ring-gold-400 transition-all"
               />
             </div>
             <div>
-              <label className="flex items-center gap-2 text-sm font-medium text-white mb-2">
+              <label className="flex items-center gap-2 text-sm font-medium text-sand-50 mb-2">
                 <Phone className="w-4 h-4 text-gold-400" />
                 Phone *
               </label>
@@ -364,13 +364,13 @@ export default function BookingForm() {
                   setForm((f) => ({ ...f, phone: e.target.value }))
                 }
                 placeholder="+63 9XX XXX XXXX"
-                className="w-full px-4 py-3 border border-white/20 rounded-xl text-sm input-luxury bg-white/5 text-white placeholder:text-white/50 focus:outline-none focus:border-gold-400 focus:ring-1 focus:ring-gold-400 transition-all"
+                className="w-full px-4 py-3 border border-sand-100/20 rounded-xl text-sm input-luxury bg-sand-50/5 text-sand-50 placeholder:text-sand-50/50 focus:outline-none focus:border-gold-400 focus:ring-1 focus:ring-gold-400 transition-all"
               />
             </div>
           </div>
 
           <div>
-            <label className="flex items-center gap-2 text-sm font-medium text-white mb-2">
+            <label className="flex items-center gap-2 text-sm font-medium text-sand-50 mb-2">
               <MessageSquare className="w-4 h-4 text-gold-400" />
               Special Requests (Optional)
             </label>
@@ -381,28 +381,28 @@ export default function BookingForm() {
                 setForm((f) => ({ ...f, specialRequests: e.target.value }))
               }
               placeholder="Any special arrangements, occasion details, dietary needs, etc."
-              className="w-full px-4 py-3 border border-white/20 rounded-xl text-sm input-luxury bg-white/5 text-white placeholder:text-white/50 focus:outline-none focus:border-gold-400 focus:ring-1 focus:ring-gold-400 transition-all resize-none"
+              className="w-full px-4 py-3 border border-sand-100/20 rounded-xl text-sm input-luxury bg-sand-50/5 text-sand-50 placeholder:text-sand-50/50 focus:outline-none focus:border-gold-400 focus:ring-1 focus:ring-gold-400 transition-all resize-none"
             />
           </div>
 
           {/* Summary */}
-          <div className="p-4 bg-white/5 rounded-xl border border-white/20 text-sm">
+          <div className="p-4 bg-sand-50/5 rounded-xl border border-sand-100/20 text-sm">
             <div className="flex justify-between mb-2">
-              <span className="text-white/60">Dates</span>
-              <span className="font-medium text-white">
+              <span className="text-sand-50/60">Dates</span>
+              <span className="font-medium text-sand-50">
                 {form.checkIn && format(form.checkIn, "MMM d")} –{" "}
                 {form.checkOut && format(form.checkOut, "MMM d, yyyy")}
               </span>
             </div>
             <div className="flex justify-between mb-2">
-              <span className="text-white/60">Duration</span>
-              <span className="font-medium text-white">
+              <span className="text-sand-50/60">Duration</span>
+              <span className="font-medium text-sand-50">
                 {nights} night{nights !== 1 ? "s" : ""}
               </span>
             </div>
             <div className="flex justify-between">
-              <span className="text-white/60">Guests</span>
-              <span className="font-medium text-white">
+              <span className="text-sand-50/60">Guests</span>
+              <span className="font-medium text-sand-50">
                 {form.guests} guest{form.guests !== 1 ? "s" : ""}
               </span>
             </div>
@@ -411,7 +411,7 @@ export default function BookingForm() {
           <div className="flex gap-3">
             <button
               onClick={() => setStep(1)}
-              className="flex-1 py-4 border border-white/20 text-white/70 font-semibold rounded-xl hover:bg-white/5 hover:text-white transition-colors text-sm uppercase tracking-wide"
+              className="flex-1 py-4 border border-sand-100/20 text-sand-50/70 font-semibold rounded-xl hover:bg-sand-50/5 hover:text-sand-50 transition-colors text-sm uppercase tracking-wide"
             >
               ← Back
             </button>
@@ -432,7 +432,7 @@ export default function BookingForm() {
             </button>
           </div>
 
-          <p className="text-center text-white/50 text-xs">
+          <p className="text-center text-sand-50/50 text-xs">
             Your booking is a request — we'll confirm availability and send
             rates within 24 hours.
           </p>

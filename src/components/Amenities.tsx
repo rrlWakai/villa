@@ -4,53 +4,53 @@ import {
   Waves,
   BedDouble,
   Trees,
-  Tv,
+  UtensilsCrossed,
   Users,
-  Camera,
-  Coffee,
-  Wind,
+  Sparkles,
+  CalendarHeart,
+  Sun,
 } from "lucide-react";
 
 const keyAmenities = [
   {
     icon: Waves,
-    name: "Beachfront Access",
-    desc: "Direct access to the calming shores of San Fabian for sunrise walks and seaside relaxation.",
+    name: "Swimming Pool Lounge",
+    desc: "A refreshing pool area with comfortable outdoor lounge spaces for all-day relaxation.",
   },
   {
     icon: BedDouble,
-    name: "Comfortable Rooms",
-    desc: "Clean, cozy, and spacious accommodations built for families, couples, and groups.",
+    name: "Modern Hotel-Style Rooms",
+    desc: "Clean, cozy, and thoughtfully designed rooms for couples, families, and weekend guests.",
   },
   {
     icon: Trees,
-    name: "Natural Coastal Surroundings",
-    desc: "A peaceful tropical environment surrounded by sea breeze and greenery.",
+    name: "Lush Garden Spaces",
+    desc: "Tropical greenery and open-air corners that create a calm and rejuvenating atmosphere.",
   },
   {
-    icon: Tv,
-    name: "Lounge & Entertainment Area",
-    desc: "Shared spaces perfect for bonding, karaoke nights, and group relaxation.",
+    icon: UtensilsCrossed,
+    name: "Indoor & Al Fresco Dining",
+    desc: "Enjoy restaurant dining with warm ambiance both indoors and under the evening sky.",
   },
   {
     icon: Users,
-    name: "Family & Barkada Friendly",
-    desc: "Designed for gatherings, celebrations, and memorable group stays.",
+    name: "Family-Friendly Retreat",
+    desc: "A welcoming and versatile staycation destination for couples, families, and groups.",
   },
   {
-    icon: Camera,
-    name: "Scenic Beach Views",
-    desc: "Picture-perfect sunsets and ocean backdrops for unforgettable memories.",
+    icon: Sparkles,
+    name: "Warm Evening Ambiance",
+    desc: "Soft lighting and premium yet approachable spaces for restful nights and great conversations.",
   },
   {
-    icon: Coffee,
-    name: "Relaxing Chill Spots",
-    desc: "Quiet areas where you can unwind, talk, and enjoy the sea breeze.",
+    icon: CalendarHeart,
+    name: "Event & Function Space",
+    desc: "Flexible garden and function areas ideal for celebrations and private gatherings.",
   },
   {
-    icon: Wind,
-    name: "Open Fresh Air Spaces",
-    desc: "Enjoy the natural coastal wind and refreshing outdoor atmosphere.",
+    icon: Sun,
+    name: "Relaxing Staycation Atmosphere",
+    desc: "Every detail is designed to help guests pause, breathe, and recharge away from city stress.",
   },
 ];
 
@@ -83,16 +83,16 @@ export default function Amenities() {
             className="max-w-2xl"
           >
             <div className="flex items-center gap-4 mb-6">
-              <span className="text-xs font-semibold tracking-[0.3em] uppercase text-amber-500">
-                Resort Features
+              <span className="text-xs font-semibold tracking-[0.3em] uppercase text-gold-400">
+                Signature Amenities
               </span>
-              <div className="h-[1px] w-12 bg-amber-400"></div>
+              <div className="h-[1px] w-12 bg-gold-400"></div>
             </div>
 
-            <h2 className="font-display text-5xl md:text-6xl text-sky-950 leading-tight">
+            <h2 className="font-display text-5xl md:text-6xl text-emerald-950 leading-tight">
               Crafted for <br />
-              <span className="italic text-amber-500 font-light">
-                Coastal Comfort
+              <span className="italic text-gold-400 font-light">
+                Modern Tropical Comfort
               </span>
             </h2>
           </motion.div>
@@ -102,11 +102,11 @@ export default function Amenities() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 1, delay: 0.2 }}
-            className="max-w-md text-sky-900/70 font-light text-lg leading-relaxed md:text-right"
+            className="max-w-md text-emerald-900/70 font-light text-lg leading-relaxed md:text-right"
           >
             <p>
-              Villa Dacanay Beach Resort is designed for rest, connection, and
-              unforgettable seaside experiences with your loved ones.
+              The Grove by Six Marys is designed for rest, connection, and
+              memorable staycation moments in Bacolor, Pampanga.
             </p>
           </motion.div>
         </div>
@@ -120,17 +120,17 @@ export default function Amenities() {
               style={{ y: y1 }}
               className="w-full h-full relative z-10"
             >
-              <div className="absolute inset-0 bg-sky-900/10 mix-blend-overlay z-10"></div>
+              <div className="absolute inset-0 bg-emerald-900/10 mix-blend-overlay z-10"></div>
 
               <img
                 src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&q=80&auto=format&fit=crop"
-                alt="Villa Dacanay Beach Resort"
+                alt="The Grove by Six Marys amenities"
                 className="w-full h-full object-cover shadow-2xl"
               />
             </motion.div>
 
             {/* Accent frame */}
-            <div className="absolute -top-12 -left-12 w-full h-full border border-amber-400/30 z-0 hidden md:block"></div>
+            <div className="absolute -top-12 -left-12 w-full h-full border border-gold-400/30 z-0 hidden md:block"></div>
           </div>
 
           {/* AMENITIES */}
@@ -145,15 +145,15 @@ export default function Amenities() {
                   transition={{ duration: 0.8, delay: index * 0.1 }}
                   className="group"
                 >
-                  <div className="w-12 h-12 flex items-center justify-center mb-6 border border-sky-900/10 text-amber-500 rounded-full group-hover:bg-sky-950 group-hover:text-amber-400 group-hover:border-sky-950 transition-all duration-500">
+                  <div className="w-12 h-12 flex items-center justify-center mb-6 border border-emerald-900/10 text-gold-400 rounded-full group-hover:bg-emerald-950 group-hover:text-gold-400 group-hover:border-emerald-900 transition-all duration-500">
                     <item.icon strokeWidth={1.5} className="w-5 h-5" />
                   </div>
 
-                  <h3 className="font-display text-xl text-sky-950 mb-2">
+                  <h3 className="font-display text-xl text-emerald-950 mb-2">
                     {item.name}
                   </h3>
 
-                  <p className="text-sky-900/60 text-sm font-light leading-relaxed">
+                  <p className="text-emerald-900/60 text-sm font-light leading-relaxed">
                     {item.desc}
                   </p>
                 </motion.div>
