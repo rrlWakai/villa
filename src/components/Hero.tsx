@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ChevronDown, MapPin } from "lucide-react";
+import { MapPin } from "lucide-react";
 
 export default function Hero() {
   const scrollToBooking = () => {
@@ -12,15 +12,30 @@ export default function Hero() {
 
   return (
     <section
-      className="relative h-[100dvh] min-h-[700px] overflow-hidden bg-emerald-950"
+      className="relative h-[100dvh] min-h-[700px] overflow-hidden bg-black"
       id="hero"
     >
       {/* Background */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-noise opacity-30 mix-blend-overlay z-10"></div>
+        {/* Noise texture */}
+        <div className="absolute inset-0 bg-noise opacity-20 mix-blend-overlay z-10" />
 
-        {/* Readability Gradient */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black-950/60 via-black-950/50 to-black-950 z-10"></div>
+        {/*
+          GRADIENT STACK — 3 layers for full readability + black luxury feel:
+
+          Layer 1 (vertical): Strong black top (nav) → clear centre (image shows) → strong black bottom (text)
+          Layer 2 (bottom reinforcement): Extra black push from the bottom up to 30% so headline is always crisp
+          Layer 3 (left vignette): Darkens the left text column without bleeding to the right
+        */}
+        <div className="absolute inset-0 z-10 bg-gradient-to-b from-black/80 via-black/15 to-black/90" />
+        <div
+          className="absolute inset-0 z-10"
+          style={{
+            background:
+              "linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 15%, rgba(0,0,0,0) 28%)",
+          }}
+        />
+        <div className="absolute inset-0 z-10 bg-gradient-to-r from-black/70 via-black/20 to-transparent" />
 
         <motion.div
           animate={{ scale: [1, 1.05] }}
@@ -41,8 +56,8 @@ export default function Hero() {
         </motion.div>
       </div>
 
-      {/* Floating particles (mobile optimized) */}
-      <div className="hidden sm:block absolute inset-0 z-10 overflow-hidden pointer-events-none opacity-50">
+      {/* Floating particles */}
+      <div className="hidden sm:block absolute inset-0 z-10 overflow-hidden pointer-events-none opacity-40">
         {[...Array(8)].map((_, i) => (
           <motion.div
             key={i}
@@ -72,6 +87,7 @@ export default function Hero() {
         <div className="flex flex-col md:flex-row justify-between items-end gap-12">
           {/* Left Content */}
           <div className="max-w-3xl">
+            {/* Eyebrow — location */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -82,18 +98,19 @@ export default function Hero() {
               }}
               className="flex items-center gap-3 mb-6"
             >
-              <div className="h-[1px] w-12 bg-gold-400"></div>
+              <div className="h-[1px] w-12 bg-gold-400" />
               <MapPin className="w-4 h-4 text-gold-400" />
-              <span className="text-sand-50/80 text-xs tracking-[0.2em] uppercase font-medium">
-                Bacolor, Pampanga, Philippines
+              <span className="text-sand-50/90 text-xs tracking-[0.2em] uppercase font-medium">
+                Morning Sun Village, Santa Rita, Pampanga
               </span>
             </motion.div>
 
+            {/* Headline */}
             <motion.h1
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1, delay: 0.4 }}
-              className="font-display text-3xl sm:text-5xl md:text-7xl lg:text-[6rem] text-sand-50 font-medium leading-[1.05] md:leading-[0.9] tracking-tight text-balance"
+              className="font-display text-3xl sm:text-5xl md:text-7xl lg:text-[6rem] text-white font-medium leading-[1.05] md:leading-[0.9] tracking-tight text-balance"
             >
               <motion.span
                 initial={{ opacity: 0, y: 40 }}
@@ -127,17 +144,14 @@ export default function Hero() {
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{
-              duration: 1,
-              delay: 0.8,
-              ease: [0.16, 1, 0.3, 1],
-            }}
+            transition={{ duration: 1, delay: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="max-w-full md:max-w-sm flex flex-col items-start md:items-end text-left md:text-right"
           >
-            <p className="text-sand-50/75 text-sm md:text-base leading-relaxed mb-8 font-light">
-              Your perfect pause from your busy life. A warm, modern, and lush
-              retreat for couples, families, and weekend escapees from Metro
-              Manila and Central Luzon.
+            <p className="text-white/85 text-sm md:text-base leading-relaxed mb-8 font-light">
+              A chlorine-free pool, spacious rooms with centralized aircon, al
+              fresco dining, karaoke, billiards, and lush greenery — all inside
+              a private resort in Santa Rita, Pampanga. The perfect pause from
+              the city, just a short drive from Metro Manila.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 w-full md:w-auto">
@@ -154,7 +168,7 @@ export default function Hero() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={scrollDown}
-                className="w-full sm:w-auto px-8 py-4 border border-sand-100/30 text-sand-50 font-medium tracking-[0.1em] uppercase text-xs hover:bg-sand-50/10 transition-colors text-center"
+                className="w-full sm:w-auto px-8 py-4 border border-white/30 text-white font-medium tracking-[0.1em] uppercase text-xs hover:bg-white/10 transition-colors text-center backdrop-blur-sm"
               >
                 Explore the retreat
               </motion.button>
@@ -168,12 +182,8 @@ export default function Hero() {
         onClick={scrollDown}
         initial={{ opacity: 0, bottom: -20 }}
         animate={{ opacity: 1, bottom: 40 }}
-        transition={{
-          delay: 1.5,
-          duration: 1,
-          ease: [0.16, 1, 0.3, 1],
-        }}
-        className="absolute left-3 sm:left-6 lg:left-16 text-sand-50/50 hover:text-gold-400 transition-colors flex flex-col items-center gap-4 z-20 group"
+        transition={{ delay: 1.5, duration: 1, ease: [0.16, 1, 0.3, 1] }}
+        className="absolute left-3 sm:left-6 lg:left-16 text-white/50 hover:text-gold-400 transition-colors flex flex-col items-center gap-4 z-20 group"
       >
         <span
           className="text-[10px] tracking-[0.3em] uppercase rotate-180"
@@ -182,7 +192,7 @@ export default function Hero() {
           Scroll
         </span>
 
-        <div className="w-[1px] h-12 bg-sand-50/20 relative overflow-hidden">
+        <div className="w-[1px] h-12 bg-white/20 relative overflow-hidden">
           <motion.div
             className="absolute top-0 w-full h-1/2 bg-gold-400"
             animate={{ y: [0, 48] }}

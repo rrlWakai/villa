@@ -32,7 +32,6 @@ export default function BookingSection() {
             >
               <div className="flex items-center gap-4 mb-6">
                 <div className="h-[1px] w-12 bg-gold-400"></div>
-
                 <span className="text-[11px] font-semibold tracking-[0.2em] uppercase text-sand-50/70">
                   Reservation Desk
                 </span>
@@ -46,17 +45,20 @@ export default function BookingSection() {
               </h2>
 
               <p className="text-sand-50/70 font-light text-lg leading-relaxed mb-12">
-                Plan your stay at The Grove by Six Marys in San Juan, Pampanga.
-                Enjoy modern comfort, tropical greenery, and a relaxing resort
-                atmosphere made for quick but meaningful escapes.
+                Plan your stay at The Grove by Six Marys in Morning Sun Village,
+                Santa Rita, Pampanga. A chlorine-free pool, cozy rooms with
+                centralized aircon, and a peaceful garden setting — the perfect
+                pause from your busy life.
               </p>
 
-              {/* TRUST POINTS */}
+              {/* TRUST POINTS — confirmed from Google reviews */}
               <div className="space-y-0">
                 {[
-                  "Swimming pool with outdoor lounge area",
-                  "Ambient indoor and al fresco dining",
-                  "Garden and event/function space",
+                  "Chlorine-free swimming pool & outdoor lounge",
+                  "Karaoke, billiards & board games",
+                  "Indoor & outdoor kitchen and dining areas",
+                  "Kids' playroom & wide parking",
+                  "Spacious rooms with centralized aircon",
                 ].map((item, idx) => (
                   <div
                     key={idx}
